@@ -1,0 +1,28 @@
+ <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script type="text/javascript">
+      google.charts.load('current', {packages: ['corechart', 'line']});
+google.charts.setOnLoadCallback(drawBasic);
+
+function drawBasic() {
+
+      var data = new google.visualization.DataTable();
+      data.addColumn('number', 'X');
+      data.addColumn('number', 'Valores');
+
+      data.addRows([[1,84], [2,395], [3,359], [4,199], [5,739]  ]);
+
+      var options = {
+        hAxis: {
+          title: 'Amostragem'
+        },
+        vAxis: {
+          title: 'Valores'
+        }
+      };
+
+      var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+
+      chart.draw(data, options);
+    }
+  </script>
+<div id="chart_div"></div>
